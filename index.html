@@ -41,7 +41,6 @@
   </script>
   
   <style>
-    /* Estilos personalizados */
     .glass-nav {
       background: rgba(14, 19, 16, 0.92);
       backdrop-filter: blur(14px);
@@ -79,23 +78,16 @@
   <header class="sticky top-0 z-50 glass-nav border-b border-brand-surface transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Logo sin fondo -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="relative w-14 h-14 flex items-center justify-center group-hover:scale-105 transition-transform">
+      <!-- Logo sin texto lateral, ajustado y limpio -->
+      <a href="#" class="flex items-center group py-2" title="Cobes Pizza">
+        <div class="relative h-14 sm:h-16 w-auto flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
           <img src="logo.jpeg" 
                alt="Cobes Pizza Logo" 
-               class="max-w-full max-h-full object-contain"
+               class="h-full w-auto object-contain"
                onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div style="display:none;" class="w-full h-full flex items-center justify-center text-brand-green-light">
+          <div style="display:none;" class="h-12 w-12 items-center justify-center text-brand-green-light">
             <i class="fa-solid fa-pizza-slice text-3xl"></i>
           </div>
-        </div>
-        <div>
-          <div class="flex items-center gap-1.5">
-            <span class="text-2xl font-black tracking-tight text-white font-display leading-none">COBES</span>
-            <span class="inline-block w-2 h-2 rounded-full bg-[#009246]" title="Italia"></span>
-          </div>
-          <span class="text-[10px] tracking-widest text-brand-green-light uppercase font-bold">Pizza Artesanal</span>
         </div>
       </a>
 
@@ -243,216 +235,556 @@
     </div>
   </section>
 
-  <!-- ================= MENU SECTION ================= -->
+  <!-- ================= MENU SECTION (CON BASE EN TU CARTA REAL) ================= -->
   <section id="menu" class="py-24 bg-brand-dark relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green-light">Nuestra Carta</span>
-        <h2 class="text-3xl sm:text-5xl font-bold font-serif text-white mt-2 mb-4">El Menú de Cobes</h2>
+      <!-- Encabezado de la Carta -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green-light">El Buen Sabor Está en los Detalles</span>
+        <h2 class="text-3xl sm:text-5xl font-bold font-serif text-white mt-2 mb-4">Nuestra Carta Oficial</h2>
         <p class="text-gray-400 text-sm sm:text-base">
-          Recetas preparadas a mano con masa crujiente, quesos selectos e ingredientes de alta calidad.
+          Masa artesanal elaborada a mano, salsa pomodoro e ingredientes premium seleccionados.
         </p>
 
-        <!-- Category Filters -->
-        <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
+        <!-- Pestañas de Filtro: Solo Pizzas, Lasagnas y Foccacia -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 mt-8">
           <button onclick="filterMenu('all')" class="menu-tab active px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-green text-white transition-all shadow-md">
             Todas
           </button>
           <button onclick="filterMenu('pizzas')" class="menu-tab px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-surface text-gray-300 hover:text-white transition-all">
             Pizzas
           </button>
-          <button onclick="filterMenu('foccacias')" class="menu-tab px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-surface text-gray-300 hover:text-white transition-all">
-            Foccacia
-          </button>
           <button onclick="filterMenu('lasagnas')" class="menu-tab px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-surface text-gray-300 hover:text-white transition-all">
-            Lasagna
+            Lasagnas
           </button>
-          <button onclick="filterMenu('bebidas')" class="menu-tab px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-surface text-gray-300 hover:text-white transition-all">
-            Bebidas
+          <button onclick="filterMenu('foccacia')" class="menu-tab px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-surface text-gray-300 hover:text-white transition-all">
+            Foccacia
           </button>
         </div>
       </div>
 
-      <!-- Menu Grid -->
+      <!-- Banner de Tamaños y Precios de Pizza -->
+      <div class="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-card via-brand-surface to-brand-card border border-brand-green/30 shadow-xl">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-3xl shrink-0">
+              <i class="fa-solid fa-pizza-slice"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-green-light uppercase tracking-wider">Tamaños de Nuestras Pizzas</span>
+              <h3 class="text-xl font-bold text-white">Elige el tamaño perfecto para tu momento</h3>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto">
+            <div class="px-5 py-3 rounded-2xl bg-brand-dark/80 border border-white/5 flex items-center justify-between gap-4">
+              <div>
+                <div class="text-xs font-bold text-white uppercase">Personal 20cm</div>
+                <div class="text-[11px] text-gray-400">4 Porciones (1 Sabor)</div>
+              </div>
+              <span class="text-lg font-black text-brand-green-light">$30.000</span>
+            </div>
+            <div class="px-5 py-3 rounded-2xl bg-brand-dark/80 border border-brand-green/40 flex items-center justify-between gap-4">
+              <div>
+                <div class="text-xs font-bold text-white uppercase">Mediana 30cm</div>
+                <div class="text-[11px] text-gray-400">6 Porciones (Hasta 2 Sabores)</div>
+              </div>
+              <span class="text-lg font-black text-white">$40.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid de Productos -->
       <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Item 1: Pepperoni Especial -->
+        <!-- ================= PIZZAS (13 SABORES DE LA CARTA) ================= -->
+        <!-- 1. Pepperoni -->
         <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
           <div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80" 
-                   alt="Cobes Pepperoni Especial" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-brand-green text-white shadow-md">
-                Más Vendida
-              </span>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80" alt="Pizza Pepperoni" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-brand-green text-white shadow-md">Clásica</span>
             </div>
             <div class="p-6">
-              <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Pepperoni Cobes</h3>
-                <span class="text-lg font-extrabold text-white">$36.000</span>
-              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Pepperoni</h3>
               <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Doble pepperoni artesanal ligeramente picante, generosa capa de queso mozzarella derretido y salsa pomodoro con orégano fresco.
+                Doble pepperoni artesanal con queso mozzarella fundido sobre nuestra clásica base de tomate y masa crocante.
               </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button onclick="orderItem('Pepperoni Cobes', '$36.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+            <button onclick="orderItem('Pizza Pepperoni', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
               <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
             </button>
           </div>
         </div>
 
-        <!-- Item 2: Cuatro Quesos & Miel -->
-        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+        <!-- 2. Costillas Ahumadas ⭐ -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-brand-green/40 hover:border-brand-green transition-all duration-300 group flex flex-col justify-between shadow-xl">
           <div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1573821663912-569905455b1a?auto=format&fit=crop&w=800&q=80" 
-                   alt="Pizza Cuatro Quesos" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-white text-brand-dark shadow-md">
-                Gourmet
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Pizza Costillas Ahumadas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-400 text-black shadow-md flex items-center gap-1">
+                ⭐ Favorita de la Casa
               </span>
             </div>
             <div class="p-6">
-              <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Quattro Formaggi</h3>
-                <span class="text-lg font-extrabold text-white">$42.000</span>
-              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Costillas Ahumadas ⭐</h3>
               <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Mozzarella, gorgonzola cremoso, provolone ahumado, parmesano reggiano y un toque sutil de miel pura de abejas.
+                Tiernas y jugosas costillas ahumadas desmechadas, toque caramelizado y abundante queso fundido al horno.
               </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button onclick="orderItem('Quattro Formaggi & Honey', '$42.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+            <button onclick="orderItem('Pizza Costillas Ahumadas ⭐', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2 shadow-md">
               <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
             </button>
           </div>
         </div>
 
-        <!-- Item 3: Margherita Tradizionale -->
+        <!-- 3. Pollo Champiñones -->
         <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
           <div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=80" 
-                   alt="Pizza Margherita" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizza Pollo Champiñones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Pollo Champiñones</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Pollo tierno sazonado, champiñones frescos laminados y mozzarella gratinada sobre suave salsa pomodoro.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Pollo Champiñones', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. Hawaiana -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80" alt="Pizza Hawaiana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Hawaiana</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                El balance dulce y salado perfecto: cubos de piña fresca confitada, jamón artesanal y queso mozzarella.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Hawaiana', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Pollo Miel Mostaza -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=800&q=80" alt="Pizza Pollo Miel Mostaza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Pollo Miel Mostaza</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Pechuga de pollo glaseada con salsa artesanal de miel pura y mostaza dijon, equilibrada con mozzarella.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Pollo Miel Mostaza', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. Mexicana -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Pizza Mexicana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Mexicana</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Carne sazonada de la casa, maíz dulce, jalapeños, pimentón fresco y un toque especiado que deleita el paladar.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Mexicana', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 7. Criolla -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=80" alt="Pizza Criolla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Criolla</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Carne de res sazonada, chorizo ahumado, maíz tierno y cebolla salteada al punto perfecto.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Criolla', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 8. Toscana 🇮🇹 -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=80" alt="Pizza Toscana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-[#009246] text-white shadow-md flex items-center gap-1.5">
-                <span>🇮🇹</span> Receta Clásica
+                <span>🇮🇹</span> Toscana
               </span>
             </div>
             <div class="p-6">
-              <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Margherita Clásica</h3>
-                <span class="text-lg font-extrabold text-white">$32.000</span>
-              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Toscana 🇮🇹</h3>
               <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Salsa de tomates madurados al sol, bocconcini de mozzarella fresca, hojas de albahaca recién cortadas y aceite de oliva virgen extra.
+                Inspiración italiana: salami abruzzese artesanal, tomates secos madurados, queso ricotta y albahaca fresca.
               </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button onclick="orderItem('Margherita Clásica', '$32.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+            <button onclick="orderItem('Pizza Toscana 🇮🇹', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
               <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
             </button>
           </div>
         </div>
 
-        <!-- Item 4: Foccacia Romero & Oliva -->
-        <div class="menu-item foccacias bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+        <!-- 9. Rúgula -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
           <div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=800&q=80" 
-                   alt="Foccacia Artesanal" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-brand-surface border border-white/10 text-white">
-                Horno de Piedra
-              </span>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1573821663912-569905455b1a?auto=format&fit=crop&w=800&q=80" alt="Pizza Rugula" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="p-6">
-              <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Foccacia al Rosmarino</h3>
-                <span class="text-lg font-extrabold text-white">$18.000</span>
-              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Rúgula</h3>
               <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Masa alveolada y suave por dentro, crujiente por fuera, perfumada con romero fresco del huerto, sal marina en escamas y abundante aceite de oliva.
+                Hojas frescas de rúgula silvestre, jamón serrano curado, lluvia de parmesano reggiano y reducción balsámica.
               </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button onclick="orderItem('Foccacia al Rosmarino', '$18.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+            <button onclick="orderItem('Pizza Rúgula', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
               <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
             </button>
           </div>
         </div>
 
-        <!-- Item 5: Lasagna Boloñesa Tradizionale -->
+        <!-- 10. Ciruela con Tocineta -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=800&q=80" alt="Pizza Ciruela con Tocineta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Ciruela con Tocineta</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Trozos de ciruela pasa dulce caramelizada envuelta en tocineta ahumada crujiente con queso fundido.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Ciruela con Tocineta', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 11. Colombiana -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizza Colombiana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Colombiana</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Sabor tradicional de nuestra tierra: pollo desmechado, maíz tierno, tocineta crujiente y queso fundido.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Colombiana', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 12. Napolitana -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80" alt="Pizza Napolitana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Napolitana</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Rodajas de tomate fresco madurado, queso mozzarella, albahaca fresca y aceite de oliva virgen extra.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza Napolitana', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- 13. Nutella -->
+        <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=800&q=80" alt="Pizza Nutella" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-600 text-white shadow-md">Postre</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors mb-2">Pizza de Nutella</h3>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Nuestra masa crocante recién salida del horno untada con abundante Nutella® tibia de avellanas.
+              </p>
+              <div class="text-xs font-semibold text-brand-muted flex justify-between border-t border-white/5 pt-2">
+                <span>Personal: $30.000</span>
+                <span class="text-white font-bold">Mediana: $40.000</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Pizza de Nutella', 'Personal $30k / Mediana $40k')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= LASAGNAS ($28.000) ================= -->
+        <!-- Lasagna Bolognesa -->
         <div class="menu-item lasagnas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
           <div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=800&q=80" 
-                   alt="Lasagna Italiana" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-brand-green text-white shadow-md">
-                Especialidad
-              </span>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=800&q=80" alt="Lasagna Bolognesa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-brand-green text-white shadow-md">Lasagna</span>
             </div>
             <div class="p-6">
               <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Lasagna alla Bolognese</h3>
+                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Lasagna Bolognesa</h3>
                 <span class="text-lg font-extrabold text-white">$28.000</span>
               </div>
               <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Capas de pasta artesanal con salsa boloñesa de cocción lenta, bechamel sedosa y gratinado crujiente de queso parmesano y mozzarella.
+                Pasta artesanal con salsa boloñesa de carne seleccionada a cocción lenta, bechamel cremosa y queso gratinado.
               </p>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button onclick="orderItem('Lasagna alla Bolognese', '$28.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+            <button onclick="orderItem('Lasagna Bolognesa', '$28.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
               <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
             </button>
           </div>
         </div>
 
-        <!-- Item 6: Bebidas Artesanales -->
-        <div class="menu-item bebidas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+        <!-- Lasagna Pollo -->
+        <div class="menu-item lasagnas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
           <div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" 
-                   alt="Bebidas frias Cobes" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281292?auto=format&fit=crop&w=800&q=80" alt="Lasagna de Pollo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-brand-green text-white shadow-md">Lasagna</span>
             </div>
             <div class="p-6">
               <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Sodas & Cervezas</h3>
-                <span class="text-lg font-extrabold text-white">Desde $8.000</span>
+                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Lasagna de Pollo</h3>
+                <span class="text-lg font-extrabold text-white">$28.000</span>
               </div>
               <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Sodas italianas saborizadas (frutos rojos, maracuyá y menta), cervezas artesanales heladas y gaseosas tradicionales.
+                Capas de pollo desmechado bien sazonado, salsa bechamel blanca suave, pomodoro y generoso queso mozzarella gratinado.
               </p>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button onclick="orderItem('Bebidas / Cervezas', 'Desde $8.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+            <button onclick="orderItem('Lasagna de Pollo', '$28.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
               <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
             </button>
+          </div>
+        </div>
+
+        <!-- Lasagna Vegetariana -->
+        <div class="menu-item lasagnas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" alt="Lasagna Vegetariana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-600 text-white shadow-md">Vegetariana</span>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Lasagna Vegetariana</h3>
+                <span class="text-lg font-extrabold text-white">$28.000</span>
+              </div>
+              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                Delicada combinación de champiñones salteados, vegetales frescos seleccionados, salsa pomodoro y queso fundido.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button onclick="orderItem('Lasagna Vegetariana', '$28.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= FOCCACIA (ARMA A TU GUSTO) ================= -->
+        <div class="menu-item foccacia lg:col-span-3 bg-brand-card rounded-3xl overflow-hidden border border-brand-green/40 p-6 sm:p-8 shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-4 relative rounded-2xl overflow-hidden h-64 sm:h-72">
+              <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=800&q=80" alt="Foccacia Artesanal" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
+                <span class="text-xs font-bold text-brand-green-light uppercase">Base 20 cm</span>
+                <span class="text-2xl font-black text-white">Foccacia $8.000</span>
+                <span class="text-xs text-gray-300">Base de Tomate & Aceite de Oliva</span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-8 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
+                <div>
+                  <h3 class="text-2xl font-bold text-white font-serif">Foccacia • Arma a tu Gusto</h3>
+                  <p class="text-xs text-gray-400">Escoge tu base y añade los ingredientes que más te gusten recién horneados.</p>
+                </div>
+                <button onclick="orderItem('Foccacia Personalizada (Base $8.000)', '$8.000 + Adiciones')" class="px-5 py-2.5 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shrink-0">
+                  <i class="fa-brands fa-whatsapp text-sm"></i> Armar por WhatsApp
+                </button>
+              </div>
+
+              <!-- Ingredientes Desglosados según Menú -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <!-- Proteínas ($9.000) -->
+                <div class="p-4 rounded-2xl bg-brand-surface/70 border border-white/5 space-y-2">
+                  <div class="flex justify-between items-center text-xs font-bold text-brand-green-light border-b border-white/5 pb-1">
+                    <span>PROTEÍNAS</span>
+                    <span class="text-white">$9.000 c/u</span>
+                  </div>
+                  <ul class="text-xs text-gray-300 space-y-1">
+                    <li>• Pepperoni</li>
+                    <li>• Salami abruzzese</li>
+                    <li>• Tocineta</li>
+                    <li>• Chorizo ahumado</li>
+                    <li>• Jamón serrano</li>
+                    <li>• Costillas ahumadas</li>
+                    <li>• Carne Sazonada</li>
+                    <li>• Pollo Sazonado</li>
+                  </ul>
+                </div>
+
+                <!-- Quesos ($7.000) -->
+                <div class="p-4 rounded-2xl bg-brand-surface/70 border border-white/5 space-y-2">
+                  <div class="flex justify-between items-center text-xs font-bold text-brand-green-light border-b border-white/5 pb-1">
+                    <span>QUESOS</span>
+                    <span class="text-white">$7.000 c/u</span>
+                  </div>
+                  <ul class="text-xs text-gray-300 space-y-1">
+                    <li>• Parmigiano reggiano</li>
+                    <li>• Ricotta</li>
+                    <li>• Parmesano</li>
+                    <li>• Mozzarella</li>
+                    <li>• Crema</li>
+                  </ul>
+                </div>
+
+                <!-- Vegetales ($4.000) -->
+                <div class="p-4 rounded-2xl bg-brand-surface/70 border border-white/5 space-y-2">
+                  <div class="flex justify-between items-center text-xs font-bold text-brand-green-light border-b border-white/5 pb-1">
+                    <span>VEGETALES</span>
+                    <span class="text-white">$4.000 c/u</span>
+                  </div>
+                  <ul class="text-xs text-gray-300 space-y-1">
+                    <li>• Maíz</li>
+                    <li>• Piña</li>
+                    <li>• Cebolla</li>
+                    <li>• Pimentón</li>
+                    <li>• Champiñones</li>
+                    <li>• Aceitunas</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
       </div>
 
-      <!-- DiDi banner call to action at bottom of menu -->
+      <!-- DiDi Banner -->
       <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-card via-brand-surface to-brand-card border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-4">
           <div class="w-14 h-14 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-2xl shrink-0">
             <i class="fa-solid fa-pizza-slice"></i>
           </div>
           <div>
-            <h4 class="text-lg font-bold text-white">¿Tienes un antojo especial o pizza mitad y mitad?</h4>
-            <p class="text-sm text-gray-400">Pídela directamente a nuestro WhatsApp o aprovecha cupones en DiDi Food.</p>
+            <h4 class="text-lg font-bold text-white">¿Quieres ordenar pizza mitad y mitad o combos?</h4>
+            <p class="text-sm text-gray-400">Pídela directamente a nuestro WhatsApp o aprovecha descuentos en DiDi Food.</p>
           </div>
         </div>
         <div class="flex gap-3 w-full md:w-auto">
@@ -465,11 +797,10 @@
     </div>
   </section>
 
-  <!-- ================= SECCIÓN: CÓMO LLEGAR (NUEVA) ================= -->
+  <!-- ================= SECCIÓN: CÓMO LLEGAR ================= -->
   <section id="como-llegar" class="py-24 bg-brand-card/60 relative border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Title -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green-light text-xs font-semibold uppercase tracking-wider mb-3">
           <i class="fa-solid fa-location-dot"></i> Visítanos o Recoge en Local
@@ -480,10 +811,9 @@
         </p>
       </div>
 
-      <!-- Content Grid: Mapa / Guía visual & Datos de ruta -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
         
-        <!-- Columna Izquierda: Imagen local del croquis/camino con fallback -->
+        <!-- Columna Izquierda: Croquis/Camino (mapa.jpeg) -->
         <div class="lg:col-span-7 flex flex-col">
           <div class="relative bg-brand-card rounded-3xl border border-brand-green/30 p-4 sm:p-5 shadow-2xl overflow-hidden flex-1 flex flex-col justify-between group">
             
@@ -492,24 +822,22 @@
                 <span class="w-3 h-3 rounded-full bg-brand-green-light animate-pulse"></span>
                 <span class="text-xs font-bold uppercase tracking-wider text-white">Mapa & Croquis de Acceso</span>
               </div>
-              <span class="text-[11px] text-brand-muted">Imagen de referencia local</span>
+              <span class="text-[11px] text-brand-muted">Imagen local</span>
             </div>
 
-            <!-- Contenedor de la Imagen Local del Camino (mapa.jpeg) -->
             <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-brand-surface border border-white/5 flex items-center justify-center">
               <img src="mapa.jpeg" 
                    alt="Mapa y cómo llegar a Cobes Pizza" 
                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                    onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
               
-              <!-- Fallback elegante mientras agregas mapa.jpeg en la carpeta -->
               <div style="display:none;" class="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-brand-surface to-brand-card">
                 <div class="w-16 h-16 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-3xl mb-4">
                   <i class="fa-solid fa-map-location-dot"></i>
                 </div>
                 <h4 class="text-lg font-bold text-white mb-1">Guarda tu imagen como "mapa.jpeg"</h4>
                 <p class="text-xs text-gray-400 max-w-sm mb-4">
-                  Coloca la foto del croquis o fachada en la misma carpeta del sitio con el nombre <code class="text-brand-green-light bg-black/40 px-2 py-0.5 rounded">mapa.jpeg</code> para verla aquí automáticamente.
+                  Coloca el croquis o foto en la misma carpeta del sitio para verla aquí automáticamente.
                 </p>
                 <a href="https://maps.app.goo.gl/A8tMFjQJCdo323ES7" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-brand-green text-white text-xs font-bold flex items-center gap-2">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir en Google Maps
@@ -517,7 +845,6 @@
               </div>
             </div>
 
-            <!-- Pie de la imagen con botón rápido -->
             <div class="mt-4 pt-3 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 px-2">
               <p class="text-xs text-gray-400 text-center sm:text-left">
                 <i class="fa-solid fa-circle-info text-brand-green-light mr-1"></i> Sigue las indicaciones del croquis para una llegada rápida.
@@ -532,10 +859,8 @@
           </div>
         </div>
 
-        <!-- Columna Derecha: Tarjeta de Navegación GPS & Puntos de Interés -->
+        <!-- Columna Derecha: Tarjeta GPS -->
         <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
-          
-          <!-- Card de acceso directo a Google Maps -->
           <div class="p-8 rounded-3xl bg-brand-card border border-brand-green/30 space-y-5 shadow-2xl relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-brand-green/10 rounded-full blur-2xl pointer-events-none"></div>
 
@@ -563,7 +888,6 @@
             </a>
           </div>
 
-          <!-- Consejos de llegada -->
           <div class="p-8 rounded-3xl bg-brand-card/90 border border-white/5 space-y-4">
             <h4 class="text-base font-bold text-white flex items-center gap-2">
               <i class="fa-solid fa-signs-post text-brand-green-light"></i>
@@ -585,7 +909,6 @@
               </li>
             </ul>
           </div>
-
         </div>
 
       </div>
@@ -593,7 +916,7 @@
     </div>
   </section>
 
-  <!-- ================= DIDI FOOD & DOMICILIOS SECTION ================= -->
+  <!-- ================= DIDI FOOD SECTION ================= -->
   <section id="didi-food" class="py-20 relative overflow-hidden bg-gradient-to-b from-brand-card to-brand-dark">
     <div class="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute -left-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-didi/15 rounded-full blur-3xl pointer-events-none"></div>
@@ -650,7 +973,6 @@
             </div>
           </div>
 
-          <!-- Card preview -->
           <div class="lg:col-span-5 relative">
             <div class="relative mx-auto max-w-sm rounded-3xl bg-brand-surface/90 border border-brand-green/30 p-6 shadow-2xl backdrop-blur">
               <div class="flex items-center justify-between pb-4 border-b border-white/10">
@@ -663,16 +985,16 @@
               <div class="py-4 space-y-3">
                 <div class="p-3.5 rounded-xl bg-brand-card border border-brand-green/20 text-xs text-gray-300 flex items-center justify-between">
                   <div>
-                    <div class="font-bold text-white">Combo Mediana + Personal Nutella</div>
-                    <div class="text-[11px] text-gray-400">Opción favorita para dos</div>
+                    <div class="font-bold text-white">Pizza Mediana 30cm (2 Sabores)</div>
+                    <div class="text-[11px] text-gray-400">Pídela en DiDi Food</div>
                   </div>
-                  <span class="text-brand-green-light font-extrabold text-sm">$58.900</span>
+                  <span class="text-brand-green-light font-extrabold text-sm">$40.000</span>
                 </div>
               </div>
 
               <div class="pt-2">
                 <a href="https://oia.didiglobal.com/dlp/fNgk0z" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-brand-didi text-white text-xs font-bold block text-center uppercase tracking-wider hover:brightness-110 transition-all">
-                  Pedir este combo en DiDi
+                  Ordenar en DiDi Food
                 </a>
               </div>
             </div>
@@ -690,17 +1012,11 @@
         
         <div class="lg:col-span-6 grid grid-cols-2 gap-4">
           <div class="space-y-4">
-            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=600&q=80" 
-                 alt="Masa fermentada Cobes" 
-                 class="w-full h-64 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
-            <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80" 
-                 alt="Ingredientes frescos de pizza" 
-                 class="w-full h-44 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
+            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=600&q=80" alt="Masa fermentada Cobes" class="w-full h-64 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
+            <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80" alt="Ingredientes frescos de pizza" class="w-full h-44 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
           </div>
           <div class="space-y-4 pt-8">
-            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=600&q=80" 
-                 alt="Horneando pizza" 
-                 class="w-full h-48 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=600&q=80" alt="Horneando pizza" class="w-full h-48 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
             
             <div class="h-60 rounded-2xl bg-gradient-to-br from-brand-card to-brand-surface p-6 border border-brand-green/30 flex flex-col justify-center text-center relative overflow-hidden">
               <div class="absolute top-0 left-0 right-0 h-1.5 italian-bar"></div>
@@ -783,11 +1099,8 @@
       <!-- Instagram Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80" 
-               alt="Pizza saliendo del horno Cobes" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
+          <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80" alt="Pizza en horno" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
             <div class="flex justify-end"><i class="fa-solid fa-clone text-xs text-white/80"></i></div>
             <div class="text-center">
@@ -800,11 +1113,8 @@
           </div>
         </a>
 
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=600&q=80" 
-               alt="Estirando masa con sémola Cobes" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
+          <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=600&q=80" alt="Masa estirada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
             <div class="flex justify-end"><i class="fa-solid fa-play text-xs text-white/80"></i></div>
             <div class="text-center">
@@ -817,11 +1127,8 @@
           </div>
         </a>
 
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" 
-               alt="Porción con queso fundido Cobes" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Queso mozzarella" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
             <div class="flex justify-end"><i class="fa-solid fa-fire text-xs text-brand-green-light"></i></div>
             <div class="text-center">
@@ -834,11 +1141,8 @@
           </div>
         </a>
 
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80" 
-               alt="Pepperoni Cobes con albahaca" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
+          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80" alt="Pepperoni Cobes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
             <div class="flex justify-end"><i class="fa-solid fa-heart text-xs text-pink-400"></i></div>
             <div class="text-center">
@@ -851,11 +1155,8 @@
           </div>
         </a>
 
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?auto=format&fit=crop&w=600&q=80" 
-               alt="Caja de pizza lista para entrega DiDi Food" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
+          <img src="https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?auto=format&fit=crop&w=600&q=80" alt="Caja para entrega" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
             <div class="flex justify-end"><i class="fa-solid fa-motorcycle text-xs text-brand-didi"></i></div>
             <div class="text-center">
@@ -868,11 +1169,8 @@
           </div>
         </a>
 
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=600&q=80" 
-               alt="Compartiendo Cobes Pizza con amigos" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
+          <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=600&q=80" alt="Amigos compartiendo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
           <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
             <div class="flex justify-end"><i class="fa-solid fa-users text-xs text-white/80"></i></div>
             <div class="text-center">
@@ -901,7 +1199,6 @@
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- Info Card 1: Horarios -->
         <div class="p-8 rounded-3xl bg-brand-card border border-white/5 space-y-4">
           <div class="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-xl">
             <i class="fa-regular fa-clock"></i>
@@ -925,7 +1222,6 @@
           </ul>
         </div>
 
-        <!-- Info Card 2: Domicilios & Cobertura -->
         <div class="p-8 rounded-3xl bg-brand-card border border-white/5 space-y-4">
           <div class="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-xl">
             <i class="fa-solid fa-map-location-dot"></i>
@@ -949,7 +1245,6 @@
           </div>
         </div>
 
-        <!-- Info Card 3: Canales Directos -->
         <div class="p-8 rounded-3xl bg-brand-card border border-white/5 space-y-4">
           <div class="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-xl">
             <i class="fa-solid fa-headset"></i>
@@ -983,27 +1278,20 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         
-        <!-- Logo Footer sin fondo -->
-        <div class="flex items-center gap-3.5">
-          <div class="w-12 h-12 flex items-center justify-center">
+        <!-- Logo Footer sin texto lateral -->
+        <a href="#" class="flex items-center group py-1" title="Cobes Pizza">
+          <div class="h-12 w-auto flex items-center justify-center group-hover:scale-105 transition-transform">
             <img src="logo.jpeg" 
                  alt="Cobes Pizza Logo" 
-                 class="max-w-full max-h-full object-contain"
+                 class="h-full w-auto object-contain"
                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div style="display:none;" class="w-full h-full flex items-center justify-center text-brand-green-light">
+            <div style="display:none;" class="h-10 w-10 items-center justify-center text-brand-green-light">
               <i class="fa-solid fa-pizza-slice text-xl"></i>
             </div>
           </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="text-lg font-black text-white font-display">COBES PIZZA</span>
-              <span class="inline-block w-2 h-2 rounded-full bg-[#009246]"></span>
-            </div>
-            <p class="text-xs text-gray-400">Tradición & Sabor Artesanal.</p>
-          </div>
-        </div>
+        </a>
 
-        <!-- Links con Cómo Llegar -->
+        <!-- Links -->
         <div class="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-wider font-semibold">
           <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
           <a href="#menu" class="hover:text-white transition-colors">Menú</a>
@@ -1013,7 +1301,6 @@
           <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
         </div>
 
-        <!-- Copyright -->
         <div class="text-xs text-center md:text-right">
           &copy; <span id="currentYear"></span> Cobes Pizza. Todos los derechos reservados.
         </div>
@@ -1059,6 +1346,7 @@
       });
     });
 
+    // Filtros de Menú (all, pizzas, lasagnas, foccacia)
     function filterMenu(category) {
       const items = document.querySelectorAll('.menu-item');
       const buttons = document.querySelectorAll('.menu-tab');
@@ -1075,13 +1363,18 @@
 
       items.forEach(item => {
         if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'flex';
+          if (item.classList.contains('lg:col-span-3')) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'flex';
+          }
         } else {
           item.style.display = 'none';
         }
       });
     }
 
+    // Ordenar vía WhatsApp
     function orderItem(itemName, price) {
       const message = `¡Hola Cobes Pizza! Quisiera ordenar *${itemName}* (${price}). ¿Cuál es el tiempo aproximado de entrega?`;
       const encodedMessage = encodeURIComponent(message);
