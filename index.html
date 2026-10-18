@@ -19,15 +19,15 @@
         extend: {
           colors: {
             brand: {
-              green: '#107C41',         // Verde bandera / artesanal principal
-              'green-dark': '#0B532B',   // Verde profundo para hover y contrastes
-              'green-light': '#1FB361',  // Verde vibrante para detalles luminosos
-              dark: '#0E1310',          // Fondo oscuro matizado en carbón/oliva
-              card: '#161C18',          // Fondo de tarjetas
+              green: '#107C41',         // Verde bandera principal
+              'green-dark': '#0B532B',   // Verde profundo para hover
+              'green-light': '#1FB361',  // Verde vibrante de acento
+              dark: '#0E1310',          // Fondo oscuro matizado
+              card: '#161C18',          // Tarjetas
               surface: '#1F2822',       // Superficie secundaria
               cream: '#F4F7F4',         // Blanco cálido
               muted: '#9EABA2',         // Texto secundario
-              didi: '#FF5722'           // Naranja DiDi Food oficial
+              didi: '#FF5722'           // Naranja DiDi Food
             }
           },
           fontFamily: {
@@ -43,7 +43,7 @@
   <style>
     /* Estilos personalizados */
     .glass-nav {
-      background: rgba(14, 19, 16, 0.90);
+      background: rgba(14, 19, 16, 0.92);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     }
@@ -56,7 +56,6 @@
     .didi-glow {
       box-shadow: 0 8px 25px -4px rgba(255, 87, 34, 0.35);
     }
-    /* Tricolor Italiano */
     .italian-bar {
       background: linear-gradient(90deg, #009246 0%, #009246 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce2b37 66.6%, #ce2b37 100%);
     }
@@ -66,7 +65,6 @@
 
   <!-- ================= TOP BAR WITH ITALIAN FLAG ACCENT ================= -->
   <div class="relative bg-brand-surface text-white text-xs font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 border-b border-white/5">
-    <!-- Mini bandera de Italia -->
     <div class="inline-flex w-5 h-3.5 rounded-sm overflow-hidden shadow-sm shrink-0 border border-black/20" title="Inspiración Tradicional Italiana">
       <span class="w-1/3 h-full bg-[#009246]"></span>
       <span class="w-1/3 h-full bg-white"></span>
@@ -81,7 +79,7 @@
   <header class="sticky top-0 z-50 glass-nav border-b border-brand-surface transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Logo sin fondo (Transparente / Limpio) -->
+      <!-- Logo sin fondo -->
       <a href="#" class="flex items-center gap-3.5 group">
         <div class="relative w-14 h-14 flex items-center justify-center group-hover:scale-105 transition-transform">
           <img src="mainlogo.jpg" 
@@ -95,7 +93,6 @@
         <div>
           <div class="flex items-center gap-1.5">
             <span class="text-2xl font-black tracking-tight text-white font-display leading-none">COBES</span>
-            <!-- Detalle sutil de bandera italiana en el encabezado -->
             <span class="inline-block w-2 h-2 rounded-full bg-[#009246]" title="Italia"></span>
           </div>
           <span class="text-[10px] tracking-widest text-brand-green-light uppercase font-bold">Pizza Artesanal</span>
@@ -103,11 +100,15 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-300">
         <a href="#inicio" class="hover:text-brand-green-light transition-colors">Inicio</a>
         <a href="#menu" class="hover:text-brand-green-light transition-colors">Menú</a>
         <a href="#historia" class="hover:text-brand-green-light transition-colors">Nuestra Historia</a>       
-        <a href="#contacto" class="hover:text-brand-green-light transition-colors">Horarios & Ubicación</a>
+        <a href="#como-llegar" class="hover:text-brand-green-light text-white font-semibold flex items-center gap-1.5 transition-colors">
+          <i class="fa-solid fa-location-dot text-brand-green-light text-xs"></i>
+          <span>Cómo Llegar</span>
+        </a>
+        <a href="#contacto" class="hover:text-brand-green-light transition-colors">Horarios</a>
       </nav>
 
       <!-- Action Buttons -->
@@ -124,16 +125,20 @@
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" aria-label="Abrir Menú" class="md:hidden p-2.5 rounded-xl bg-brand-surface text-gray-200 hover:text-white border border-white/5">
+      <button id="mobileMenuBtn" aria-label="Abrir Menú" class="lg:hidden p-2.5 rounded-xl bg-brand-surface text-gray-200 hover:text-white border border-white/5">
         <i class="fa-solid fa-bars-staggered text-lg"></i>
       </button>
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-brand-surface bg-brand-card/98 px-6 py-6 space-y-4 shadow-2xl">
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-brand-surface bg-brand-card/98 px-6 py-6 space-y-4 shadow-2xl">
       <a href="#inicio" class="mobile-nav-link block text-base font-medium text-gray-200 hover:text-brand-green-light">Inicio</a>
       <a href="#menu" class="mobile-nav-link block text-base font-medium text-gray-200 hover:text-brand-green-light">Menú</a>
       <a href="#historia" class="mobile-nav-link block text-base font-medium text-gray-200 hover:text-brand-green-light">Nuestra Historia</a>    
+      <a href="#como-llegar" class="mobile-nav-link block text-base font-semibold text-brand-green-light hover:underline flex items-center gap-2">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Cómo Llegar</span>
+      </a>
       <a href="#contacto" class="mobile-nav-link block text-base font-medium text-gray-200 hover:text-brand-green-light">Horarios & Ubicación</a>
       
       <div class="pt-4 flex flex-col gap-3">
@@ -152,7 +157,6 @@
 
   <!-- ================= HERO SECTION ================= -->
   <section id="inicio" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-    <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
       <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=2000&q=80" 
            alt="Cobes Pizza Horno Artesanal" 
@@ -161,10 +165,7 @@
       <div class="absolute inset-0 hero-gradient"></div>
     </div>
 
-    <!-- Content -->
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-      
-      <!-- Pill Badge con Bandera Italiana -->
       <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-card/90 border border-brand-green/50 text-white text-xs font-semibold mb-6 green-glow backdrop-blur">
         <div class="inline-flex w-4 h-2.5 rounded-sm overflow-hidden border border-white/20">
           <span class="w-1/3 h-full bg-[#009246]"></span>
@@ -185,15 +186,14 @@
         En <strong class="text-white font-semibold">Cobes Pizza</strong> honramos la tradición pizzera: masa de larga fermentación, salsa pomodoro con hierbas frescas y 100% mozzarella fundido.
       </p>
 
-      <!-- Main CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
         <a href="#menu" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white font-bold text-sm tracking-wide shadow-xl green-glow hover:scale-105 transition-all duration-200 flex items-center justify-center gap-3">
           <i class="fa-solid fa-utensils"></i>
           <span>Explorar el Menú</span>
         </a>
-        <a href="#didi-food" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-surface/90 hover:bg-brand-surface border border-brand-green/30 hover:border-brand-green text-white font-semibold text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-3">
-          <i class="fa-solid fa-motorcycle text-brand-didi"></i>
-          <span>Pedir en DiDi Food</span>
+        <a href="#como-llegar" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-surface/90 hover:bg-brand-surface border border-brand-green/30 hover:border-brand-green text-white font-semibold text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-3">
+          <i class="fa-solid fa-map-pin text-brand-green-light"></i>
+          <span>Cómo Llegar al Local</span>
         </a>
       </div>
 
@@ -247,7 +247,6 @@
   <section id="menu" class="py-24 bg-brand-dark relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Title -->
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green-light">Nuestra Carta</span>
         <h2 class="text-3xl sm:text-5xl font-bold font-serif text-white mt-2 mb-4">El Menú de Cobes</h2>
@@ -334,7 +333,7 @@
           </div>
         </div>
 
-        <!-- Item 3: Margherita Tradizionale con Bandera -->
+        <!-- Item 3: Margherita Tradizionale -->
         <div class="menu-item pizzas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
           <div>
             <div class="relative h-56 overflow-hidden">
@@ -418,600 +417,4 @@
           </div>
         </div>
 
-        <!-- Item 6: Bebidas Artesanales -->
-        <div class="menu-item bebidas bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/50 transition-all duration-300 group flex flex-col justify-between shadow-lg">
-          <div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" 
-                   alt="Bebidas frias Cobes" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-green-light transition-colors">Sodas & Cervezas</h3>
-                <span class="text-lg font-extrabold text-white">Desde $8.000</span>
-              </div>
-              <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
-                Sodas italianas saborizadas (frutos rojos, maracuyá y menta), cervezas artesanales heladas y gaseosas tradicionales.
-              </p>
-            </div>
-          </div>
-          <div class="p-6 pt-0">
-            <button onclick="orderItem('Bebidas / Cervezas', 'Desde $8.000')" class="w-full py-2.5 rounded-xl bg-brand-surface hover:bg-brand-green text-white text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
-              <i class="fa-solid fa-cart-plus"></i> Pedir por WhatsApp
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- DiDi banner call to action at bottom of menu -->
-      <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-card via-brand-surface to-brand-card border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-2xl shrink-0">
-            <i class="fa-solid fa-pizza-slice"></i>
-          </div>
-          <div>
-            <h4 class="text-lg font-bold text-white">¿Tienes un antojo especial o pizza mitad y mitad?</h4>
-            <p class="text-sm text-gray-400">Pídela directamente a nuestro WhatsApp o aprovecha cupones en DiDi Food.</p>
-          </div>
-        </div>
-        <div class="flex gap-3 w-full md:w-auto">
-          <a href="#didi-food" class="w-full md:w-auto px-6 py-3 rounded-xl bg-brand-didi hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider text-center transition-all">
-            Ir a DiDi Food
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= DIDI FOOD & DOMICILIOS SECTION ================= -->
-  <section id="didi-food" class="py-20 relative overflow-hidden bg-gradient-to-b from-brand-card to-brand-dark">
-    <!-- Glow elements -->
-    <div class="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-didi/15 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="bg-gradient-to-br from-[#141B16] to-[#0E1310] border border-brand-green/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-didi/20 border border-brand-didi/40 text-brand-didi text-xs font-bold tracking-wider uppercase">
-              <i class="fa-solid fa-bolt"></i> Domicilio Express & Convenio Oficial
-            </div>
-            
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-serif leading-tight">
-              Pide <span class="text-brand-green-light">Cobes Pizza</span> directo por <br class="hidden sm:inline">
-              <span class="text-white underline decoration-brand-didi underline-offset-8">DiDi Food</span>
-            </h2>
-
-            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-              ¿Sin ganas de salir de casa? Encuéntranos en la aplicación de DiDi Food y recibe tu pizza con masa crocante recién salida del horno y el mejor empaque térmico sellado.
-            </p>
-
-            <!-- Highlights Checklist -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-green-light mt-1"></i>
-                <span class="text-xs sm:text-sm text-gray-200"><strong class="text-white">Empaque Térmico:</strong> Crujiente y caliente a tu mesa.</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-green-light mt-1"></i>
-                <span class="text-xs sm:text-sm text-gray-200"><strong class="text-white">Rastreo en vivo:</strong> Conoce cada paso del repartidor.</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-green-light mt-1"></i>
-                <span class="text-xs sm:text-sm text-gray-200"><strong class="text-white">Descuentos & Cupones:</strong> Promociones continuas en la app.</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-brand-green-light mt-1"></i>
-                <span class="text-xs sm:text-sm text-gray-200"><strong class="text-white">Pago Seguro:</strong> Tarjeta de crédito, PSE o efectivo.</span>
-              </div>
-            </div>
-
-            <!-- DiDi CTA Buttons -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-              <a href="https://oia.didiglobal.com/dlp/fNgk0z" target="_blank" rel="noopener noreferrer" 
-                 class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-didi to-[#e64a19] hover:brightness-110 text-white font-extrabold text-sm tracking-wide text-center shadow-lg transition-transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
-                <i class="fa-solid fa-mobile-screen-button text-lg"></i>
-                <span>Abrir DiDi Food y Ordenar</span>
-              </a>
-
-              <a href="https://wa.me/573238050395?text=Hola%20Cobes%20Pizza,%20quiero%20hacer%20un%20pedido%20directo" target="_blank" rel="noopener noreferrer" 
-                 class="px-6 py-4 rounded-xl bg-brand-surface hover:bg-brand-card border border-white/10 text-white font-semibold text-sm tracking-wide text-center transition-all flex items-center justify-center gap-2">
-                <i class="fa-brands fa-whatsapp text-brand-green-light text-lg"></i>
-                <span>Domicilio por WhatsApp</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card preview -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative mx-auto max-w-sm rounded-3xl bg-brand-surface/90 border border-brand-green/30 p-6 shadow-2xl backdrop-blur">
-              <div class="flex items-center justify-between pb-4 border-b border-white/10">
-                <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-lg bg-brand-didi flex items-center justify-center text-white font-bold text-xs">DiDi</div>
-                  <span class="text-xs font-semibold text-gray-200">DiDi Food • Cobes Pizza</span>
-                </div>
-              </div>
-              
-              <div class="py-4 space-y-3">
-                <div class="p-3.5 rounded-xl bg-brand-card border border-brand-green/20 text-xs text-gray-300 flex items-center justify-between">
-                  <div>
-                    <div class="font-bold text-white">Combo Mediana + Personal Nutella</div>
-                    <div class="text-[11px] text-gray-400">Opción favorita para dos</div>
-                  </div>
-                  <span class="text-brand-green-light font-extrabold text-sm">$58.900</span>
-                </div>
-              </div>
-
-              <div class="pt-2">
-                <a href="https://oia.didiglobal.com/dlp/fNgk0z" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-brand-didi text-white text-xs font-bold block text-center uppercase tracking-wider hover:brightness-110 transition-all">
-                  Pedir este combo en DiDi
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= NUESTRA HISTORIA ================= -->
-  <section id="historia" class="py-24 bg-brand-dark relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Collage de Fotos -->
-        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-          <div class="space-y-4">
-            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=600&q=80" 
-                 alt="Masa fermentada Cobes" 
-                 class="w-full h-64 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
-            <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80" 
-                 alt="Ingredientes frescos de pizza" 
-                 class="w-full h-44 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
-          </div>
-          <div class="space-y-4 pt-8">
-            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=600&q=80" 
-                 alt="Horneando pizza" 
-                 class="w-full h-48 object-cover rounded-2xl border border-white/5 shadow-xl hover:scale-[1.02] transition-transform">
-            
-            <div class="h-60 rounded-2xl bg-gradient-to-br from-brand-card to-brand-surface p-6 border border-brand-green/30 flex flex-col justify-center text-center relative overflow-hidden">
-              <div class="absolute top-0 left-0 right-0 h-1.5 italian-bar"></div>
-              <span class="text-4xl font-extrabold text-brand-green-light font-serif">+5</span>
-              <span class="text-sm font-semibold text-white mt-1">Años Perfeccionando</span>
-              <span class="text-xs text-gray-400 mt-1">Nuestra receta tradicional de masa crocante y ligera</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Story text -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-brand-green-light">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#009246]"></span>
-            <span>Tradición Italiana & Pasión Artesanal</span>
-          </div>
-          <h2 class="text-3xl sm:text-5xl font-bold font-serif text-white leading-tight">
-            Nacidos de la pasión por la buena masa.
-          </h2>
-
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-            <strong>Cobes Pizza</strong> nació de un sueño sencillo: crear la pizza que nosotros mismos quisiéramos disfrutar cada día. Inspirados en los métodos clásicos italianos, respetamos la paciencia de la fermentación lenta, el aroma del orégano silvestre y el crujido inconfundible de un borde bien horneado.
-          </p>
-
-          <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
-            Cada masa se estira a mano con sémola fina de trigo, respetando el borde inflado y alveolado. Sin prisas, sin conservantes y con ingredientes seleccionados.
-          </p>
-
-          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10">
-            <div>
-              <div class="text-2xl font-black text-white font-display">100%</div>
-              <div class="text-xs text-gray-400 mt-0.5">Queso Mozzarella de primera calidad</div>
-            </div>
-            <div>
-              <div class="text-2xl font-black text-brand-green-light font-display">24H</div>
-              <div class="text-xs text-gray-400 mt-0.5">Fermentación de masa digestiva</div>
-            </div>
-            <div>
-              <div class="text-2xl font-black text-white font-display">0%</div>
-              <div class="text-xs text-gray-400 mt-0.5">Conservantes artificiales</div>
-            </div>
-          </div>
-
-          <div class="pt-2">
-            <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-brand-surface hover:bg-brand-card border border-brand-green/40 hover:border-brand-green text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md">
-              <i class="fa-brands fa-instagram text-base text-pink-400"></i>
-              <span>Conoce nuestro día a día en @cobes_pizza</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= INSTAGRAM FEED SHOWCASE ================= -->
-  <section class="py-20 bg-brand-surface/30 border-y border-white/5 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green-light text-xs font-semibold uppercase tracking-wider mb-3">
-            <i class="fa-brands fa-instagram text-sm"></i> @cobes_pizza en Instagram
-          </div>
-          <h3 class="text-3xl sm:text-4xl font-bold font-serif text-white tracking-tight">Directo desde nuestro Horno</h3>
-          <p class="text-sm text-gray-400 mt-1 max-w-xl">
-            Sigue el proceso diario: amasado tradicional, ingredientes frescos y pizzas doradas al punto exacto.
-          </p>
-        </div>
-
-        <a href="https://www.instagram.com/cobes_pizza/" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all transform hover:-translate-y-0.5">
-          <i class="fa-brands fa-instagram text-lg"></i>
-          <span>Seguir en Instagram</span>
-        </a>
-      </div>
-
-      <!-- Instagram Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-        
-        <!-- Post 1 -->
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80" 
-               alt="Pizza saliendo del horno Cobes" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
-            <div class="flex justify-end">
-              <i class="fa-solid fa-clone text-xs text-white/80"></i>
-            </div>
-            <div class="text-center">
-              <div class="flex items-center justify-center gap-4 text-xs font-bold mb-1">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-heart text-brand-green-light"></i> 248</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-comment"></i> 19</span>
-              </div>
-              <p class="text-[11px] line-clamp-2 text-gray-300 font-medium">Recién salida de la piedra a 400°C 🔥</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Post 2 -->
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=600&q=80" 
-               alt="Estirando masa con sémola Cobes" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
-            <div class="flex justify-end">
-              <i class="fa-solid fa-play text-xs text-white/80"></i>
-            </div>
-            <div class="text-center">
-              <div class="flex items-center justify-center gap-4 text-xs font-bold mb-1">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-heart text-brand-green-light"></i> 312</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-comment"></i> 27</span>
-              </div>
-              <p class="text-[11px] line-clamp-2 text-gray-300 font-medium">Masa de fermentación lenta estirada a mano 🌾</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Post 3 -->
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" 
-               alt="Porción con queso fundido Cobes" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
-            <div class="flex justify-end">
-              <i class="fa-solid fa-fire text-xs text-brand-green-light"></i>
-            </div>
-            <div class="text-center">
-              <div class="flex items-center justify-center gap-4 text-xs font-bold mb-1">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-heart text-brand-green-light"></i> 489</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-comment"></i> 43</span>
-              </div>
-              <p class="text-[11px] line-clamp-2 text-gray-300 font-medium">100% Mozzarella fundido a la perfección 🧀</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Post 4 -->
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80" 
-               alt="Pepperoni Cobes con albahaca" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
-            <div class="flex justify-end">
-              <i class="fa-solid fa-heart text-xs text-pink-400"></i>
-            </div>
-            <div class="text-center">
-              <div class="flex items-center justify-center gap-4 text-xs font-bold mb-1">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-heart text-brand-green-light"></i> 364</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-comment"></i> 31</span>
-              </div>
-              <p class="text-[11px] line-clamp-2 text-gray-300 font-medium">La favorita de todos: Pepperoni Cobes 🍕</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Post 5 -->
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?auto=format&fit=crop&w=600&q=80" 
-               alt="Caja de pizza lista para entrega DiDi Food" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
-            <div class="flex justify-end">
-              <i class="fa-solid fa-motorcycle text-xs text-brand-didi"></i>
-            </div>
-            <div class="text-center">
-              <div class="flex items-center justify-center gap-4 text-xs font-bold mb-1">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-heart text-brand-green-light"></i> 198</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-comment"></i> 14</span>
-              </div>
-              <p class="text-[11px] line-clamp-2 text-gray-300 font-medium">Sellada y lista para DiDi Food & WhatsApp 🛵</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Post 6 -->
-        <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" 
-           class="group relative rounded-2xl overflow-hidden aspect-square border border-white/10 bg-brand-card block">
-          <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=600&q=80" 
-               alt="Compartiendo Cobes Pizza con amigos" 
-               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 sm:p-4 text-white">
-            <div class="flex justify-end">
-              <i class="fa-solid fa-users text-xs text-white/80"></i>
-            </div>
-            <div class="text-center">
-              <div class="flex items-center justify-center gap-4 text-xs font-bold mb-1">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-heart text-brand-green-light"></i> 521</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-comment"></i> 48</span>
-              </div>
-              <p class="text-[11px] line-clamp-2 text-gray-300 font-medium">Los mejores momentos se comparten con pizza 🍕</p>
-            </div>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- Instagram Micro-Banner -->
-      <div class="mt-8 flex items-center justify-center gap-2 text-xs text-gray-400">
-        <i class="fa-brands fa-instagram text-pink-500"></i>
-        <span>Etiquétanos en tus historias con <strong class="text-white">@cobes_pizza</strong> para repostearte</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= HORARIOS, UBICACIÓN & CONTACTO ================= -->
-  <section id="contacto" class="py-24 bg-brand-dark relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- Info Card 1: Horarios -->
-        <div class="p-8 rounded-3xl bg-brand-card border border-white/5 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-xl">
-            <i class="fa-regular fa-clock"></i>
-          </div>
-          <h4 class="text-xl font-bold text-white">Horarios de Atención</h4>
-          <p class="text-xs text-gray-400">Horneamos para entregarte el mejor sabor artesanal.</p>
-          
-          <ul class="space-y-2.5 pt-2 text-sm text-gray-300">
-            <li class="flex justify-between border-b border-white/5 pb-1">
-              <span>Martes a Viernes:</span>
-              <span class="font-semibold text-white">4:00 PM - 9:00 PM</span>
-            </li>
-            <li class="flex justify-between border-b border-white/5 pb-1">
-              <span>Sábado y Domingo:</span>
-              <span class="font-semibold text-brand-green-light">2:00 PM - 9:00 PM</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Lunes y Festivos:</span>
-              <span class="font-semibold text-gray-400">Sin servicio</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Info Card 2: Domicilios & Cobertura -->
-        <div class="p-8 rounded-3xl bg-brand-card border border-white/5 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-xl">
-            <i class="fa-solid fa-map-location-dot"></i>
-          </div>
-          <h4 class="text-xl font-bold text-white">Zona de Cobertura</h4>
-          <p class="text-xs text-gray-400">Llegamos a tu puerta a través de DiDi Food y WhatsApp.</p>
-          
-          <div class="space-y-3 pt-2 text-sm text-gray-300">
-            <p class="flex items-center gap-2">
-              <i class="fa-solid fa-check text-brand-green-light text-xs"></i>
-              <span>Amplia zona de entrega metropolitana</span>
-            </p>
-            <p class="flex items-center gap-2">
-              <i class="fa-solid fa-check text-brand-green-light text-xs"></i>
-              <span>Tiempo promedio: 30 - 45 min</span>
-            </p>
-            <p class="flex items-center gap-2">
-              <i class="fa-solid fa-check text-brand-green-light text-xs"></i>
-              <span>Opción de recoger en local disponible</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- Info Card 3: Canales Directos -->
-        <div class="p-8 rounded-3xl bg-brand-card border border-white/5 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-xl">
-            <i class="fa-solid fa-headset"></i>
-          </div>
-          <h4 class="text-xl font-bold text-white">Pedidos y Contacto</h4>
-          <p class="text-xs text-gray-400">Escríbenos para pedidos directos o eventos.</p>
-          
-          <div class="space-y-3 pt-2">
-            <a href="https://wa.me/573238050395" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-gray-200 hover:text-brand-green-light transition-colors">
-              <i class="fa-brands fa-whatsapp text-brand-green-light text-base"></i>
-              <span>+57 323 805 0395</span>
-            </a>
-            <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-gray-200 hover:text-pink-400 transition-colors">
-              <i class="fa-brands fa-instagram text-pink-400 text-base"></i>
-              <span>@cobes_pizza</span>
-            </a>
-            <a href="https://oia.didiglobal.com/dlp/fNgk0z" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-brand-didi hover:underline transition-colors">
-              <i class="fa-solid fa-motorcycle text-base"></i>
-              <span>Buscar "Cobes Pizza" en DiDi Food</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-black border-t border-brand-surface py-12 text-sm text-gray-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        
-        <!-- Logo Footer sin fondo (Transparente / Limpio) -->
-        <div class="flex items-center gap-3.5">
-          <div class="w-12 h-12 flex items-center justify-center">
-            <img src="mainlogo.jpg" 
-                 alt="Cobes Pizza Logo" 
-                 class="max-w-full max-h-full object-contain"
-                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div style="display:none;" class="w-full h-full flex items-center justify-center text-brand-green-light">
-              <i class="fa-solid fa-pizza-slice text-xl"></i>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="text-lg font-black text-white font-display">COBES PIZZA</span>
-              <span class="inline-block w-2 h-2 rounded-full bg-[#009246]"></span>
-            </div>
-            <p class="text-xs text-gray-400">Tradición & Sabor Artesanal.</p>
-          </div>
-        </div>
-
-        <!-- Links -->
-        <div class="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-wider font-semibold">
-          <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
-          <a href="#menu" class="hover:text-white transition-colors">Menú</a>
-          <a href="#historia" class="hover:text-white transition-colors">Historia</a>
-          <a href="#didi-food" class="text-brand-didi hover:text-white transition-colors">DiDi Food</a>
-          <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
-        </div>
-
-        <!-- Copyright -->
-        <div class="text-xs text-center md:text-right">
-          &copy; <span id="currentYear"></span> Cobes Pizza. Todos los derechos reservados.
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
-  <a href="https://wa.me/573238050395?text=Hola%20Cobes%20Pizza!%20Quisiera%20hacer%20un%20pedido" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     title="Escríbenos por WhatsApp"
-     class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-brand-green hover:bg-brand-green-dark text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 green-glow">
-    <i class="fa-brands fa-whatsapp text-2xl"></i>
-    <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-brand-green-light border-2 border-brand-dark animate-ping"></span>
-  </a>
-
-  <!-- ================= POPUP NOTIFICATION MODAL ================= -->
-  <div id="toastNotification" class="fixed bottom-6 left-6 z-50 transform -translate-y-4 opacity-0 pointer-events-none transition-all duration-300 max-w-sm bg-brand-card border border-brand-green/40 text-white p-4 rounded-2xl shadow-2xl flex items-center gap-3">
-    <div class="w-9 h-9 rounded-xl bg-brand-green/20 text-brand-green-light flex items-center justify-center text-lg shrink-0">
-      <i class="fa-solid fa-bell"></i>
-    </div>
-    <div class="text-xs">
-      <div id="toastTitle" class="font-bold text-white">¡Producto Seleccionado!</div>
-      <div id="toastMessage" class="text-gray-300">Redirigiendo a WhatsApp...</div>
-    </div>
-  </div>
-
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    // Año dinámico
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    // Menú móvil
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // Filtros de menú
-    function filterMenu(category) {
-      const items = document.querySelectorAll('.menu-item');
-      const buttons = document.querySelectorAll('.menu-tab');
-
-      buttons.forEach(btn => {
-        btn.classList.remove('bg-brand-green', 'text-white', 'shadow-md');
-        btn.classList.add('bg-brand-surface', 'text-gray-300');
-      });
-
-      if (event && event.target) {
-        event.target.classList.remove('bg-brand-surface', 'text-gray-300');
-        event.target.classList.add('bg-brand-green', 'text-white', 'shadow-md');
-      }
-
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // Ordenar vía WhatsApp
-    function orderItem(itemName, price) {
-      const message = `¡Hola Cobes Pizza! Quisiera ordenar *${itemName}* (${price}). ¿Cuál es el tiempo aproximado de entrega?`;
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/573238050395?text=${encodedMessage}`;
-
-      showToast(`Añadido: ${itemName}`, 'Abriendo WhatsApp para confirmar tu pedido...');
-
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, 700);
-    }
-
-    // Notificación Toast
-    function showToast(title, message) {
-      const toast = document.getElementById('toastNotification');
-      const toastTitle = document.getElementById('toastTitle');
-      const toastMessage = document.getElementById('toastMessage');
-
-      toastTitle.textContent = title;
-      toastMessage.textContent = message;
-
-      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
-      toast.classList.add('opacity-100', 'translate-y-0');
-
-      setTimeout(() => {
-        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
-        toast.classList.remove('opacity-100', 'translate-y-0');
-      }, 3500);
-    }
-  </script>
-</body>
-</html>
+        <!-- Item 6: Bebidas Artes
