@@ -27,6 +27,7 @@
               surface: '#1F2822',       // Superficie secundaria
               cream: '#F4F7F4',         // Blanco cálido
               muted: '#9EABA2',         // Texto secundario
+              rappi: '#FF441F',         // Naranja Rappi
               didi: '#FF5722'           // Naranja DiDi Food
             }
           },
@@ -52,6 +53,9 @@
     .green-glow {
       box-shadow: 0 0 25px -4px rgba(16, 124, 65, 0.45);
     }
+    .rappi-glow {
+      box-shadow: 0 8px 25px -4px rgba(255, 68, 31, 0.35);
+    }
     .didi-glow {
       box-shadow: 0 8px 25px -4px rgba(255, 87, 34, 0.35);
     }
@@ -70,7 +74,7 @@
       <span class="w-1/3 h-full bg-[#ce2b37]"></span>
     </div>
     <span class="hidden sm:inline text-brand-muted font-normal">Tradición Italiana & Sabor Artesanal —</span>
-    <span>¡Pide hoy caliente y crujiente por DiDi Food!</span>
+    <span>¡Pide hoy caliente y crujiente por Rappi y DiDi Food!</span>
     <a href="#didi-food" class="underline hover:text-brand-green-light ml-1 font-bold">Pedir ahora</a>
   </div>
 
@@ -110,6 +114,10 @@
           <i class="fa-brands fa-whatsapp text-sm"></i>
           <span>WHATSAPP</span>
         </a>
+        <a href="https://www.rappi.com.co/restaurantes/delivery/373340-cobes-pizza" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-brand-rappi hover:brightness-110 text-white font-bold text-xs tracking-wider shadow-lg rappi-glow transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+          <i class="fa-solid fa-motorcycle"></i>
+          <span>PEDIR EN RAPPI</span>
+        </a>
         <a href="#didi-food" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-didi to-[#e64a19] hover:brightness-110 text-white font-bold text-xs tracking-wider shadow-lg didi-glow transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
           <i class="fa-solid fa-bag-shopping"></i>
           <span>PEDIR EN DIDI</span>
@@ -138,6 +146,10 @@
            class="w-full py-3 rounded-xl bg-brand-green text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span>Pedir vía WhatsApp</span>
+        </a>
+        <a href="https://www.rappi.com.co/restaurantes/delivery/373340-cobes-pizza" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-brand-rappi text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg">
+          <i class="fa-solid fa-motorcycle text-lg"></i>
+          <span>Pedir en Rappi</span>
         </a>
         <a href="#didi-food" class="w-full py-3 rounded-xl bg-brand-didi text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg">
           <i class="fa-solid fa-bag-shopping text-lg"></i>
@@ -789,10 +801,13 @@
           </div>
           <div>
             <h4 class="text-lg font-bold text-white">¿Quieres ordenar pizza mitad y mitad o combos?</h4>
-            <p class="text-sm text-gray-400">Pídela directamente a nuestro WhatsApp o aprovecha descuentos en DiDi Food.</p>
+            <p class="text-sm text-gray-400">Pídela directamente a nuestro WhatsApp o aprovecha descuentos en Rappi y DiDi Food.</p>
           </div>
         </div>
         <div class="flex gap-3 w-full md:w-auto">
+          <a href="https://www.rappi.com.co/restaurantes/delivery/373340-cobes-pizza" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto px-6 py-3 rounded-xl bg-brand-rappi hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider text-center transition-all">
+            Ir a Rappi
+          </a>
           <a href="#didi-food" class="w-full md:w-auto px-6 py-3 rounded-xl bg-brand-didi hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider text-center transition-all">
             Ir a DiDi Food
           </a>
@@ -936,11 +951,12 @@
             
             <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-serif leading-tight">
               Pide <span class="text-brand-green-light">Cobes Pizza</span> directo por <br class="hidden sm:inline">
+              <span class="text-white underline decoration-brand-rappi underline-offset-8">Rappi</span> y
               <span class="text-white underline decoration-brand-didi underline-offset-8">DiDi Food</span>
             </h2>
 
             <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-              ¿Sin ganas de salir de casa? Encuéntranos en la aplicación de DiDi Food y recibe tu pizza con masa crocante recién salida del horno y el mejor empaque térmico sellado.
+              ¿Sin ganas de salir de casa? Encuéntranos en Rappi o en DiDi Food y recibe tu pizza con masa crocante recién salida del horno y el mejor empaque térmico sellado.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -962,7 +978,13 @@
               </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4 pt-4">
+              <a href="https://www.rappi.com.co/restaurantes/delivery/373340-cobes-pizza" target="_blank" rel="noopener noreferrer"
+                 class="px-8 py-4 rounded-xl bg-brand-rappi hover:brightness-110 text-white font-extrabold text-sm tracking-wide text-center shadow-lg rappi-glow transition-transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-motorcycle text-lg"></i>
+                <span>Ordenar en Rappi</span>
+              </a>
+
               <a href="https://oia.didiglobal.com/dlp/fNgk0z" target="_blank" rel="noopener noreferrer" 
                  class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-didi to-[#e64a19] hover:brightness-110 text-white font-extrabold text-sm tracking-wide text-center shadow-lg transition-transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
                 <i class="fa-solid fa-mobile-screen-button text-lg"></i>
@@ -1231,7 +1253,7 @@
             <i class="fa-solid fa-map-location-dot"></i>
           </div>
           <h4 class="text-xl font-bold text-white">Zona de Cobertura</h4>
-          <p class="text-xs text-gray-400">Llegamos a tu puerta a través de DiDi Food y WhatsApp.</p>
+          <p class="text-xs text-gray-400">Llegamos a tu puerta a través de Rappi, DiDi Food y WhatsApp.</p>
           
           <div class="space-y-3 pt-2 text-sm text-gray-300">
             <p class="flex items-center gap-2">
@@ -1264,6 +1286,10 @@
             <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-gray-200 hover:text-pink-400 transition-colors">
               <i class="fa-brands fa-instagram text-pink-400 text-base"></i>
               <span>@cobes_pizza</span>
+            </a>
+            <a href="https://www.rappi.com.co/restaurantes/delivery/373340-cobes-pizza" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-brand-rappi hover:underline transition-colors">
+              <i class="fa-solid fa-motorcycle text-base"></i>
+              <span>Buscar "Cobes Pizza" en Rappi</span>
             </a>
             <a href="https://oia.didiglobal.com/dlp/fNgk0z" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-brand-didi hover:underline transition-colors">
               <i class="fa-solid fa-motorcycle text-base"></i>
@@ -1301,6 +1327,7 @@
           <a href="#menu" class="hover:text-white transition-colors">Menú</a>
           <a href="#como-llegar" class="text-brand-green-light hover:text-white transition-colors">Cómo Llegar</a>
           <a href="#historia" class="hover:text-white transition-colors">Historia</a>
+          <a href="https://www.rappi.com.co/restaurantes/delivery/373340-cobes-pizza" target="_blank" rel="noopener noreferrer" class="text-brand-rappi hover:text-white transition-colors">Rappi</a>
           <a href="#didi-food" class="text-brand-didi hover:text-white transition-colors">DiDi Food</a>
           <a href="https://www.instagram.com/cobes_pizza/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
         </div>
